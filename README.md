@@ -18,7 +18,7 @@ This starter has added:
 - an internal layout which uses a custom header component
 - a link in the footer to the current page on your hosted prototype
 -a link in the footer to the git repository
-- the [accessible autocomplete component](https://github.com/alphagov/accessible-autocomplete)
+- the [accessible autocomplete component](https://github.com/alphagov/accessible-autocomplete), you can upgrade any select by adding the 'js-autocomplete' class
 
 The department name for internal header, and both the hosted prototype and the repo URLs are set in session-data-defaults.js.
 
