@@ -1,16 +1,27 @@
 # GOV.UK Prototype Kit Starter
 
-This is a fork of the GOV.UK Prototype Kit with some additional settings and features.
+> Upgraded to v13 of the prototype kit!
 
-> This is an unofficial version of the kit, it is not supported by government. Some of the features have been hacked in quickly to suit my own needs which means they might not work perfectly and will almost certainly go out of date as GOV designs and features are updated.
+## About
 
-It includes:
+This is a copy the GOV.UK Prototype Kit with some additional settings and features.
 
-- a new ‘internal’ config variable which replace the GOV.UK logo with the service name and remove some other things
-- a prototype phase banner
-- a link in the footer to the currrent page in the heroku app
-- a link in the footer to the git repo
+It is a community resource of the [GOV.UK Prototype Kit](http://prototype-kit.service.gov.uk/). The Prototype Kit team is not responsible for it and cannot support you with using it.
+
+If you&rsquo;ve got a question, need support, or want to contribute you can [create an issue on GitHub](https://github.com/chrisadesign/govuk-prototype-kit/issues).
+
+## Included
+
+This starter has added:
 - a feature and versioning system
-- a date filter
-- the accessible autocomplete component
-- GOV.UK guide and publisher component styles (add 'guide' class to main)
+- a layout with question structure setup and a new questions block
+- an internal layout which uses a custom header component
+- a link in the footer to the current page on your hosted prototype
+-a link in the footer to the git repository
+- the [accessible autocomplete component](https://github.com/alphagov/accessible-autocomplete)
+
+The department name for internal header, and both the hosted prototype and the repo URLs are set in session-data-defaults.js.
+
+## Usage
+
+You can clone/download this repo and then run **npm install** then **npm run dev**.

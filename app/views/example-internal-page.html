@@ -1,0 +1,50 @@
+{% extends "layouts/internal.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ data['department-name'] }}
+      </h1>
+
+      <p>Look at that lovely header.</p>
+
+      {{ govukSelect({
+        id: 'autocomplete-name',
+        name: 'autocomplete-name',
+        classes: 'js-autocomplete',
+        label: {
+          html: 'This is an accessible autocomplete',
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          html: 'You can upgrade any select by adding the &lsquo;js-autocomplete&rsquo; class'
+        },
+        items: [
+          {
+            value: '',
+            text: 'Select option'
+          },
+          {
+            value: "Option A",
+            text: "Option A"
+          },
+          {
+            value: "Option B",
+            text: "Option B"
+          },
+          {
+            value: "Option C",
+            text: "Option C"
+          }
+        ],
+        attributes: {
+          'data-default-value': data['autocomplete-name']
+        }
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

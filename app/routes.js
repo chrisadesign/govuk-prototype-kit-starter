@@ -1,34 +1,42 @@
-const express = require('express')
-const router = express.Router()
-const config = require('./config.js')
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/routes
+//
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+const config = require('govuk-prototype-kit/lib/config').getConfig()
 
-// Clear session data without confirmation
-router.get('/prototype-admin/clear-data', function (req, res) {
-  req.session.destroy()
-  res.redirect('/')
-})
 
-// Grab the URL for the heroku link and check if local env
+
+
+
 router.use('/', (req, res, next) => {
-  res.locals.repoURL = config.repoURL
-  res.locals.herokuURL = config.herokuURL
-  res.locals.currentURL = req.url
-  res.locals.internal = config.internal
+	// Add a local var if the prototype is running locally
+	if (req.get('host').includes('localhost')) {
+		res.locals.local = true
 
-  if (req.get('host').includes('localhost')) {
-    res.locals.host = true
-  }
+		// Grab the current URL for the remote prototype link
+		res.locals.currentURL = req.url
+	}
 
-  next()
+	next()
 })
 
-// Import routes from feature prototypes
-router.use(/\/(.)*\/v([0-9]+)/, (req, res, next) => {
-  return require(`./views/${req.originalUrl.split('/')[1]}/v${req.params[1]}/_routes`)(req, res, next);
+// Import routes from different prototype folders
+//
+// Could probably merge these 3 into one…
+router.use("/:service/:prototype/v:version", (req, res, next) => {
+	try {
+		return require(`./views/${req.params.service}/${req.params.prototype}/v${req.params.version}/_routes`)(req, res, next)
+	} catch (e) { next() }
 })
-
-
-
-
-// Add your routes above the module.exports line
-module.exports = router
+router.use("/:service/v:version", (req, res, next) => {
+	try {
+		return require(`./views/${req.params.service}/v${req.params.version}/_routes`)(req, res, next)
+	} catch (e) { next() }
+})
+router.use("/v:version", (req, res, next) => {
+	try {
+		return require(`./views/v${req.params.version}/_routes`)(req, res, next)
+	} catch (e) { next() }
+})

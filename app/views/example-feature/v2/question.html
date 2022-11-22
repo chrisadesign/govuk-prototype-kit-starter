@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% set title = 'Do you like this prototype starter?' %}
+
+{% block questions %}
+  {{ govukRadios({
+    idPrefix: 'im-so-needy',
+    name: 'im-so-needy',
+    fieldset: {
+      legend: {
+        html: title,
+        classes: 'govuk-fieldset__legend--l',
+        isPageHeading: true
+      }
+    },
+    items: [
+      {
+        html: 'Yes',
+        value: 'Yes',
+        checked: checked('im-so-needy','Yes')
+      },
+      {
+        html: 'No',
+        value: 'No',
+        checked: checked('im-so-needy','No')
+      }
+    ]
+  }) }}
+{% endblock %}

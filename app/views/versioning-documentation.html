@@ -1,58 +1,44 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
+
+{% set title = 'Feature and versioning system guidance' %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">
-        Feature and versioning system guidance
-      </h1>
-    </div>
-
     <div class="govuk-grid-column-two-thirds">
 
-      <p>This fork has a versioning system built in, which allows you to create a feature &ndash; these can be any structure you want, for example you might organise by hypotheses or sprints &ndash; which then has as many versions of that thing as you need.</p>
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
+
+      <p>This starter has a versioning system built in. It lets you create versions of your prototype and imports the routes for each one.</p>
+
+      {{ govukInsetText({
+        html: '<p>It does not currently have versions for other things, for example styles and layouts.</p>'
+      }) }}
 
 
+      <h2 id="structure" class="govuk-heading-m">
+        How the folders are structured
+      </h2>
 
-      <h2 id="structure" class="govuk-heading-m">How the folders are structured</h2>
+      <p>You can create version folders, for example <code>v1</code>, at 3 different levels, depending on how you like to structure your prototypes.</p>
 
-      <p>There is an <code>example-feature</code> folder within <code>views</code>. In there is an index page which acts as the changelog for each feature. There is also a <code>v1</code> folder which has an example question page and a <code>_routes.js</code> file; each version of a feature has it&rsquo;s own routes file.<p>
+      <p class="govuk-!-margin-bottom-2">Example level structures:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li><code>/v1</code></li>
+        <li><code>/juggling-licence/v1</code></li>
+        <li><code>/juggling-licence/new-feature/v1</code></li>
+      </ol>
 
-      <img src="/public/images/versioning-system-folder-structure.png" alt="Screenshot of the folder structure" style="max-width: 300px;">
-
-      <p>Each feature folder sits in the views folder. Versions within a feature must be a number prefixed with a &lsquo;v&rsquo;, for example &lsquo;v12&rsquo;.</p>
-
-      <p>Routes are controlled per version of a feature, the main <code>routes.js</code> file in views imports the version routes as long as the folder structure is followed.</p>
-
-
-
-
-
-
-
-      <h2 id="new" class="govuk-heading-m">How to create a new feature</h2>
-      <p>When you start on a new feature all you need to do is dupliacte the <code>example-feature</code> folder and rename it.</p>
-
-      <p>When you need a new version you can duplicate the <code>v1</code> folder and link to it from the index/changelog page.</p>
-
-
+      <p>There is an <a href="example-feature/">example-feature</a> folder within <code>views</code>. In there is an index page which acts as the changelog for each feature. There is also a <code>v2</code> folder which has an example question page and a <code>_routes.js</code> file.<p>
 
 
 
       {{ govukInsetText({
-        html: '<p>I stole this from <a href="https://twitter.com/abbott567">Craig Abbott</a>, Craig is awesome 😻</p>',
+        html: '<p>I stole the original version of this from <a href="https://twitter.com/abbott567">Craig Abbott</a>, Craig is awesome 😻</p>',
         classes: 'govuk-!-margin-top-9'
       }) }}
 
-
-
-
-
-
-
-
     </div>
   </div>
-
 {% endblock %}

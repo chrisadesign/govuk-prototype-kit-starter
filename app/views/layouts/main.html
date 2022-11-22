@@ -1,0 +1,110 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+
+{# Add the title(h1) to page title if it's set, add to each page with:
+{% set title = 'Example' %} #}
+{% block pageTitle %}
+	{{ title+' –' if title }} {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{# Add the phase banner and back link to each page #}
+{% block beforeContent %}
+	{{ govukPhaseBanner({
+		tag: { text: 'Prototype', classes: 'govuk-tag--pink' },
+		html: 'This is not a real service, it is only for testing ideas.'
+	}) }}
+
+	{# Add a back link block to just override that and not the phase banner #}
+	{% block backLink %}
+		{# Add a javascript back link, remove on pages that don't need it with:
+		{% set back = false %} #}
+		{{ govukBackLink({
+			html: 'Back',
+			href: 'javascript:history.back()'
+		}) if back != false }}
+	{% endblock %}
+{% endblock %}
+
+
+{# Setup form question pages by default, override by using content block if not needed #}
+{% block content %}
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-three-quarters govuk-grid-column-two-thirds-from-desktop">
+
+			{# Forms all post to themselves, action controlled by _routes.js in each prototype #}
+			<form method="post">
+
+				{# Use the questions block on each page without needing to add in the rest of this block #}
+				{% block questions %}{% endblock %}
+
+				{# Set default button to continue, use buttons block to override #}
+				{% block buttons %}
+					{{ govukButton({
+						text: 'Continue'
+					}) }}
+				{% endblock %}
+
+			</form>
+
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block footer %}
+	{# Add prototype links if set in page, use with:
+	{% set prototypeLinks = [{href: '#0', text: 'Link to this page'}] %} #}
+
+	{# Add link to hosted prototype app if running locally #}
+	{{ govukFooter({
+		navigation: [
+			{
+				items: prototypeLinks
+			}
+		] if prototypeLinks,
+		meta: {
+			items: [
+				{
+					href: '/manage-prototype',
+					text: 'Manage prototype'
+				} if local,
+				{
+					href: '/manage-prototype/clear-data',
+					text: 'Clear data'
+				},
+				{
+					href: data['prototype-url'] + currentURL,
+					text: 'View hosted page (opens in new tab)',
+					attributes: {
+						target: 'blank'
+					}
+				} if local and data['prototype-url'],
+				{
+					href: data['repository-url'],
+					text: 'View repository (opens in new tab)',
+					attributes: {
+						target: 'blank'
+					}
+				} if data['repository-url']
+			] | cleanArray,
+			visuallyHiddenTitle: 'Footer links'
+		}
+	}) }}
+{% endblock %}
+
+
+{# Import scrips #}
+{% block bodyEnd %}
+	{% block scripts %}
+		{# Add autocomplete #}
+		<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+		{% include 'govuk-prototype-kit/includes/scripts.html' %}
+		{% block pageScripts %}{% endblock %}
+	{% endblock %}
+{% endblock %}

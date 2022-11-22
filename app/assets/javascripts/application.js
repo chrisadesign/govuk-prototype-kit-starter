@@ -1,36 +1,19 @@
-/* global $ */
+//
+// For guidance on how to add JavaScript see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
 
-// Warn about using the kit in production
-if (window.console && window.console.info) {
-  window.console.info('GOV.UK Prototype Kit - do not use for production')
-}
+window.GOVUKPrototypeKit.documentReady(() => {
 
-$(document).ready(function () {
-  window.GOVUKFrontend.initAll()
-})
+  // Upgrade any select with `.js-autocomplete` class
+  let autocomplete = document.querySelector('.js-autocomplete')
+
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: autocomplete.getAttribute('data-default-value'),
+    selectElement: autocomplete
+  })
 
 
-// Example autocomplete
-let selectElement = document.querySelector('#choose-country')
 
-accessibleAutocomplete.enhanceSelectElement({
-  defaultValue: '',
-  source: (query, populateResults) => {
-    const options = selectElement.querySelectorAll('option')
-    let results = []
 
-    options.forEach(
-      (opt, i, list) => {
-        let queryRegExp = new RegExp(query.trim(), 'i')
-        let value = opt.getAttribute('value')
-        let text = opt.innerText.trim()
-        if (queryRegExp.test(value) || queryRegExp.test(text)) {
-          results.push(text)
-        }
-      }
-    )
-
-    populateResults(results)
-  },
-  selectElement: selectElement
 })

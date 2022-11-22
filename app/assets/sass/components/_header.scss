@@ -1,0 +1,56 @@
+$department-color: govuk-colour("pink");
+
+.app-c-layout-header .govuk-header__container {
+	border-bottom-color: $department-color;
+	padding-top: 5px;
+}
+
+.app-c-header__logo {
+	white-space: nowrap;
+	width: auto;
+	margin-bottom: 5px;
+
+	.govuk-header__logotype {
+		padding-right: 5px;
+		&:after {
+			display: inline-block;
+			content: "";
+			background-color: #fff;
+			width: 1px;
+			height: 25px;
+			position: relative;
+			top: 5px;
+			left: 6px;
+		}
+	}
+
+	.govuk-header__link {
+		line-height: 40px;
+	}
+
+	.govuk-header__logotype-text {
+		font-size: 24px;
+	}
+}
+
+.app-c-header__content {
+	width: auto;
+
+	@include govuk-media-query($from: desktop) {
+		float: right;
+	}
+}
+
+.app-c-header__product-name {
+	display: block;
+
+	@include govuk-media-query($from: tablet) {
+		display: inline-block;
+	}
+}
+
+.govuk-header__navigation-item--collapsed-menu-only {
+	@include govuk-media-query($from: desktop) {
+		display: none;
+	}
+}

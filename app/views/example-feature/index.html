@@ -1,30 +1,35 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
+
+{% set title = 'Example feature' %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">
-        [Feature name]
-      </h1>
-    </div>
-
     <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
       <p>Overview of feature.</p>
 
+
+
+      {% set version = "2" %}
       <h2 class="govuk-heading-m">
-        Version 2
+        Version {{version}}
+        {{ govukTag({
+          classes: 'govuk-tag--yellow govuk-!-margin-left-2',
+          text: 'In progress'
+        }) }}
       </h2>
 
-      <h3 class="govuk-heading-s">Changes</h3>
-      <p>Information about this version.</p>
-
-      <h3 class="govuk-heading-s">Research notes</h3>
-      <p>Information about the research.</p>
-      <p><a href="#0">View user research report</a>.<p>
+      <p class="govuk-!-margin-bottom-2">Changes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Minor copy tweaks.</li>
+      </ul>
 
       {{ govukButton({
         text: 'View prototype',
-        href: 'v1/question'
+        href: 'v'+version+'/question'
       }) }}
 
 
@@ -32,25 +37,29 @@
 
 
 
-      {% set v1 %}
-        <h3 class="govuk-heading-s">Changes</h3>
-        <p>Information about this version.</p>
+      {% set v1HTML %}
+        {% set version = "1" %}
+        <p>Information about this version</p>
 
-        <h3 class="govuk-heading-s">Research notes</h3>
-        <p>Information about the research.</p>
-        <p><a href="#0">View user research report</a>.<p>
+        <p><a href="#0">View the research outputs on Miro</a>.</p>
 
         {{ govukButton({
           text: 'View prototype',
-          href: 'v1/question'
+          href: '#0'
         }) }}
       {% endset %}
 
       {{ govukAccordion({
+        id: 'previous',
+        classes: 'govuk-!-margin-top-9',
         items: [
           {
-            heading: { text: 'Version 1' },
-            content: { html: v1 }
+            heading: {
+              html: 'Version 1 <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">Researched</strong>'
+            },
+            content: {
+              html: v1HTML
+            }
           }
         ]
       }) }}
@@ -58,3 +67,4 @@
     </div>
   </div>
 {% endblock %}
+
