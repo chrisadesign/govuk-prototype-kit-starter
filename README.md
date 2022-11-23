@@ -25,3 +25,7 @@ The department name for internal header, and both the hosted prototype and the r
 ## Usage
 
 You can clone/download this repo and then run **npm install** then **npm run dev**.
+
+## Screenshots
+
+<img width="1005" alt="Screenshot of the custom header bar, with the prodyct name alongside thge department name and a custom colour in the bar beneath" src="https://user-images.githubusercontent.com/22620603/203498537-09dca5be-e3b2-4e26-9dfd-9e3c0cd14b43.png">
