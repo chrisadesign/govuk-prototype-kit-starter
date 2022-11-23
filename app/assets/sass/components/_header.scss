@@ -10,26 +10,22 @@ $department-color: govuk-colour("pink");
 	width: auto;
 	margin-bottom: 5px;
 
-	.govuk-header__logotype {
-		padding-right: 5px;
-		&:after {
-			display: inline-block;
-			content: "";
-			background-color: #fff;
-			width: 1px;
-			height: 25px;
-			position: relative;
-			top: 5px;
-			left: 6px;
+	.govuk-header__logotype-text {
+		font-size: 24px;
+	}
+
+	@include govuk-media-query($until: tablet) {
+		.govuk-header__logotype-crown {
+			width: 46px;
+			height: 46px;
+			padding: 4px 0 5px 0;
 		}
 	}
 
-	.govuk-header__link {
-		line-height: 40px;
-	}
-
-	.govuk-header__logotype-text {
-		font-size: 24px;
+	@include govuk-media-query($from: tablet) {
+		.govuk-header__link {
+			line-height: 40px;
+		}
 	}
 }
 
@@ -42,10 +38,25 @@ $department-color: govuk-colour("pink");
 }
 
 .app-c-header__product-name {
-	display: block;
+	position: absolute;
+	top: 37px;
+	left: 53px;
 
 	@include govuk-media-query($from: tablet) {
+		position: initial;
 		display: inline-block;
+
+			&:before {
+				display: inline-block;
+				content: "";
+				background-color: #fff;
+				width: 1px;
+				height: 25px;
+				position: relative;
+				top: 5px;
+				left: 0;
+				margin-right: 10px;
+			}
 	}
 }
 
