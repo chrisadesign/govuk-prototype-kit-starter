@@ -6,11 +6,13 @@
 window.GOVUKPrototypeKit.documentReady(() => {
 
   // Upgrade any select with `.js-autocomplete` class
-  let autocomplete = document.querySelector('.js-autocomplete')
+  let autocompletes = document.querySelectorAll('.js-autocomplete')
 
-  accessibleAutocomplete.enhanceSelectElement({
-    defaultValue: autocomplete.getAttribute('data-default-value'),
-    selectElement: autocomplete
+  autocompletes.forEach(autocomplete => {
+    accessibleAutocomplete.enhanceSelectElement({
+      defaultValue: autocomplete.getAttribute('data-default-value'),
+      selectElement: autocomplete
+    })
   })
 
 
