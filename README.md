@@ -26,6 +26,8 @@ This starter has added:
 
 The repository is a template, you can create a new repo of your own based on this one. Alternatively, you can download or clone the code.
 
+To run the kit locally use **npm install** then **npm run dev**.
+
 ## Screenshots
 
 <img width="1005" alt="Screenshot of the custom header bar, with the product name alongside the department name and a custom colour in the bar beneath" src="https://user-images.githubusercontent.com/22620603/203498537-09dca5be-e3b2-4e26-9dfd-9e3c0cd14b43.png">
