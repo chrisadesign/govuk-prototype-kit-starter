@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "govuk-frontend": "^4.4.0",
-    "govuk-prototype-kit": "^13.0.0"
+    "govuk-prototype-kit": "^13.0.1"
   }
 }
