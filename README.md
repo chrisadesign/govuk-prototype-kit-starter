@@ -17,6 +17,7 @@ This starter has added:
 - a layout with question structure setup and a new questions block
 - an internal layout which uses a custom header component
 - the [accessible autocomplete component](https://github.com/alphagov/accessible-autocomplete) – you can upgrade any select by adding the 'js-autocomplete' class
+- an inverse button to use on dark backgrounds, 'govuk-button--inverse'
 - a link in the footer to the current page on your hosted prototype
 - a link in the footer to the git repository
 
