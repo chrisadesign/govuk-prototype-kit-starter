@@ -33,4 +33,8 @@ To run the kit locally use **npm install** then **npm run dev**.
 
 ## Screenshots
 
-<img width="1005" alt="Screenshot of the custom header bar, with the product name alongside the department name and a custom colour in the bar beneath" src="https://user-images.githubusercontent.com/22620603/203498537-09dca5be-e3b2-4e26-9dfd-9e3c0cd14b43.png">
+<p><img alt="Screenshot of the custom internal template, with a header bar showing department and product names and a custom colour in the bar beneath" src="https://github.com/chrisadesign/govuk-prototype-kit-starter/assets/22620603/89686ee2-26f0-4303-9a1c-b209bfe3bf44"></p>
+
+<p><img alt="Screenshot showing the govuk accessibile autocomplete in an example page" src="https://github.com/chrisadesign/govuk-prototype-kit-starter/assets/22620603/083bc272-a80e-4b79-96c4-51b83a94ee85"></p>
+
+<p><img alt="Screenshot of a code editor showing the settings sass file and the default values from govuk frontend" src="https://github.com/chrisadesign/govuk-prototype-kit-starter/assets/22620603/ed2246b5-e799-4548-99e6-70c3c14379bb"></p>
