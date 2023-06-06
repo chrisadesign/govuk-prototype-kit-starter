@@ -15,12 +15,12 @@
 {% block header %}
 	{# Add nav with just sign out by default, remove on pages that don't need it with:
 	{% set nav = false %} #}
-	{{ appHeader({
+	{# {{ appHeader({
 		organisationName: {
-			text: data['department-name']
+			html: data['department-name']
 		},
 		serviceName: {
-			text: serviceName
+			html: serviceName
 		},
 		navigation: {
 			label: 'Primary navigation',
@@ -31,5 +31,26 @@
 				}
 			]
 		} if nav != false
+	}) }} #}
+
+	{{ appHeader({
+		organisationName: data['department-name'],
+		homepageUrl: '/',
+		productName: serviceName,
+		serviceUrl: '',
+		navigation: [
+			{
+				href: '#support',
+				text: 'Support'
+			},
+			{
+				href: '#account',
+				text: 'Your account'
+			},
+			{
+				href: '#sign-out',
+				text: 'Sign out'
+			}
+		]
 	}) }}
 {% endblock %}

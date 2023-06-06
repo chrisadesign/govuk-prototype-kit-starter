@@ -5,6 +5,7 @@
 
 window.GOVUKPrototypeKit.documentReady(() => {
 
+
   // Upgrade any select with `.js-autocomplete` class
   let autocompletes = document.querySelectorAll('.js-autocomplete')
 
@@ -14,8 +15,6 @@ window.GOVUKPrototypeKit.documentReady(() => {
       selectElement: autocomplete
     })
   })
-
-
 
 
 })

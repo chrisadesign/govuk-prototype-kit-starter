@@ -22,6 +22,7 @@ router.use('/', (req, res, next) => {
 	next()
 })
 
+
 // Import routes from different prototype folders
 //
 // Could probably merge these 3 into one…
