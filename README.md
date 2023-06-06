@@ -13,10 +13,12 @@ If you&rsquo;ve got a question, need support, or want to contribute you can [cre
 ## Included
 
 This starter has added:
+
 - a feature and versioning system
-- a layout with question structure setup and a new questions block
-- an internal layout which uses a custom header component
-- the [accessible autocomplete component](https://github.com/alphagov/accessible-autocomplete) – you can upgrade any select by adding the 'js-autocomplete' class
+- a new "questions" block within content one to reduce code in form pages
+- an internal layout which uses a custom header component (example internal page)
+- the accessible autocomplete component integrated, you can upgrade any select by adding the 'js-autocomplete' class (example autocomplete page)
+- the "secret" 'settings.scss' file, with most options listed with their default values, should hopefully make rebranding easier
 - an inverse button to use on dark backgrounds, 'govuk-button--inverse'
 - a link in the footer to the current page on your hosted prototype
 - a link in the footer to the git repository
