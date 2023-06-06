@@ -40,17 +40,18 @@ $govuk-link-hover-underline-thickness: unquote("max(3px, .1875rem, .12em)");
 
 
 // MEASUREMENTS
+// Added calc's in to remove sass warnings
 $govuk-page-width: 960px;
 $govuk-grid-widths: (
-	one-quarter: (100% / 4),
-	one-third: (100% / 3),
-	one-half: (100% / 2),
-	two-thirds: (200% / 3),
-	three-quarters: (300% / 4),
+	one-quarter: calc(100% / 4),
+	one-third: calc(100% / 3),
+	one-half: calc(100% / 2),
+	two-thirds: calc(200% / 3),
+	three-quarters: calc(300% / 4),
 	full: 100%
 );
 $govuk-gutter: 30px;
-$govuk-gutter-half: $govuk-gutter / 2;
+$govuk-gutter-half: calc($govuk-gutter / 2);
 $govuk-border-width: 5px;
 $govuk-border-width-wide: 10px;
 $govuk-border-width-narrow: 4px;
