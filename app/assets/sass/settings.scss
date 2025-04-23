@@ -4,7 +4,7 @@
 //
 
 // COLOURS
-@import "./node_modules/govuk-frontend/govuk/helpers/colour";
+@import "./node_modules/govuk-frontend/dist/govuk/helpers/colour";
 
 $govuk-brand-colour: govuk-colour("blue");
 $govuk-text-colour: govuk-colour("black");

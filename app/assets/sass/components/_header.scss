@@ -12,18 +12,27 @@ $app-header-border-color: govuk-colour("pink");
 	.govuk-header__logo {
 		white-space: nowrap;
 		width: auto;
-		padding: govuk-spacing(1) govuk-spacing(2) govuk-spacing(1) 0;
 		margin: 0;
+		padding: govuk-spacing(1) govuk-spacing(2) govuk-spacing(1) 0;
+		@include govuk-media-query($from: tablet) {
+			padding: 0;
+		}
+	}
+
+	.govuk-header__logotype {
+		position: initial;
 	}
 
 	.govuk-header__logotype-text {
-		@include govuk-font(27, bold);
+		font-size: 21px;
+		font-weight: 700;
 		position: relative;
-		top: -8px;
+		top: -18px;
 		left: -1px;
 
 		@include govuk-media-query($from: tablet) {
-			position: initial;
+			font-size: 27px;
+			top: -10px;
 			display: inline-block;
 		}
 	}
@@ -58,6 +67,7 @@ $app-header-border-color: govuk-colour("pink");
 
 		@include govuk-media-query($from: tablet) {
 			line-height: 38px;
+			top: 3px;
 		}
 	}
 
@@ -66,6 +76,11 @@ $app-header-border-color: govuk-colour("pink");
 
 		@include govuk-media-query($from: desktop) {
 			float: right;
+
+			.govuk-header__navigation-list {
+				position: relative;
+				top: -3px;
+			}
 		}
 
 		.govuk-header__navigation {
