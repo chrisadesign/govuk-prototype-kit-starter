@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+{% set title = 'Autocomplete example' %}
+
+{% block questions %}
+
+  {{ govukSelect({
+    id: 'autocomplete',
+    name: 'autocomplete',
+    classes: 'js-autocomplete',
+    label: {
+      html: 'This is an accessible autocomplete',
+      classes: 'govuk-label--l',
+      isPageHeading: true
+    },
+    hint: {
+      html: 'You can upgrade any select by adding the \'js-autocomplete\' class.<br>Start typing "Option A" to see it in action.'
+    },
+    items: [
+      {
+        value: '',
+        text: 'Select option'
+      },
+      {
+        value: "Option A",
+        text: "Option A"
+      },
+      {
+        value: "Option B",
+        text: "Option B"
+      },
+      {
+        value: "Option C",
+        text: "Option C"
+      }
+    ],
+    attributes: {
+      'data-default-value': data['autocomplete']
+    }
+  }) }}
+
+{% endblock %}

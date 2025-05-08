@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set title = 'One Login' %}
+{% set title = 'Example feature' %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -9,15 +9,11 @@
       <h1 class="govuk-heading-l">
         {{ title }}
       </h1>
-      <p>Reproducing some of the One Login service screens to include in research settings for context.</p>
-
-      {{ govukInsetText({
-        html: '<p>You can pass users into the One Login flow from any other prototypes, you just need to add a return path as part of the URL. For example:</p>
-        <p><code> href="/one-login/v1/create-account?onelogin-return=/account-creation/v1/confirmation"</code></p>'
-      }) }}
+      <p>Overview of feature.</p>
 
 
-      {% set version = "1" %}
+
+      {% set version = "2" %}
       <h2 class="govuk-heading-m">
         Version {{version}}
         {{ govukTag({
@@ -26,11 +22,14 @@
         }) }}
       </h2>
 
-      <p>This just covers the sign in process for now and not registration.</p>
+      <p class="govuk-!-margin-bottom-2">Changes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Minor copy tweaks.</li>
+      </ul>
 
       {{ govukButton({
         text: 'View prototype',
-        href: 'v'+version+'/create-account'
+        href: 'v'+version+'/question'
       }) }}
 
 
@@ -38,7 +37,7 @@
 
 
 
-      {# {% set v1HTML %}
+      {% set v1HTML %}
         {% set version = "1" %}
         <p>Information about this version</p>
 
@@ -63,7 +62,7 @@
             }
           }
         ]
-      }) }} #}
+      }) }}
 
     </div>
   </div>

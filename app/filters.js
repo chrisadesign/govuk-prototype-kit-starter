@@ -7,12 +7,3 @@ addFilter('cleanArray', (array) => {
 		return (item && (item !==""))
 	})
 })
-
-addFilter('push', (array, item) => {
-	array.push(item)
-	return array
-})
-
-addFilter('placeholder', function (content) {
-	return '<span class="placeholder">' + content + '</span>'
-}, { renderAsHtml: true })

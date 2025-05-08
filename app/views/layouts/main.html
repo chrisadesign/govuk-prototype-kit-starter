@@ -8,7 +8,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {# Add the title(h1) to page title if it's set, add to each page with:
 {% set title = 'Example' %} #}
 {% block pageTitle %}
-	{{ title | striptags +' –' if title }} {{ serviceName }} – GOV.UK
+	{{ title+' –' if title }} {{ serviceName }} – GOV.UK
 {% endblock %}
 
 
@@ -42,10 +42,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 				{# Use the questions block on each page without needing to add in the rest of this block #}
 				{% block questions %}{% endblock %}
 
-				{# Set default button to 'Save and continue', use buttons block to override #}
+				{# Set default button to continue, use buttons block to override #}
 				{% block buttons %}
 					{{ govukButton({
-						text: 'Save and continue'
+						text: 'Continue'
 					}) }}
 				{% endblock %}
 
