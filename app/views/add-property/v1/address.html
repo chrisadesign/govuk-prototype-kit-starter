@@ -1,0 +1,29 @@
+{% extends "layouts/one-login.html" %}
+
+{% set title = 'Add the property address' %}
+
+{% block questions %}
+  <h1 class="govuk-heading-l">
+    {{ title }}
+  </h1>
+
+  <p>You can search for the address using the postcode or <a class="govuk-link--no-visited-state" href="address--manual">enter it manually</a>.</p>
+
+  {{ govukInput({
+    id: 'address-postcode',
+    name: 'address-postcode',
+    value: data['address-postcode'],
+    classes: 'govuk-input--width-10',
+    label: {
+      html: 'What is the postcode?',
+      classes: 'govuk-label--m'
+    },
+    autocomplete: 'postal-code'
+  }) }}
+{% endblock %}
+
+{% block buttons %}
+  {{ govukButton({
+    html: 'Find address'
+  }) }}
+{% endblock %}

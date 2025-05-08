@@ -1,0 +1,17 @@
+{% extends "layouts/one-login.html" %}
+
+{% set title = 'How many bedrooms does the property have?' %}
+
+{% block questions %}
+  {{ govukInput({
+    id: 'bedrooms',
+    name: 'bedrooms',
+    value: data['bedrooms'],
+    classes: 'govuk-input--width-5',
+    label: {
+      html: title,
+      classes: 'govuk-label--l',
+      isPageHeading: true
+    }
+  }) }}
+{% endblock %}

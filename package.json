@@ -5,7 +5,9 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "govuk-frontend": "5.9.0",
+    "@govuk-prototype-kit/common-templates": "2.0.1",
+    "govuk-frontend": "^5.10.0",
+    "govuk-one-login-service-header": "github:govuk-one-login/service-header",
     "govuk-prototype-kit": "13.16.2"
   }
 }

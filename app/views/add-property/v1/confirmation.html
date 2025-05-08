@@ -1,0 +1,38 @@
+{% extends "layouts/one-login.html" %}
+{% set back = false %}
+
+{% set title = 'Registration complete' %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: title,
+        html: 'Your registration number<br><strong>ABC1234567890</strong>'
+      }) }}
+
+      <p>We have sent you a confirmation email.</p>
+
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>You need to display your registration number anywhere you advertise your property.</p>
+
+      <p>Your property may be subject to random spot checks or inspections to verify the accuracy of the details provided. You will be contacted if this is needed.</p>
+
+      <p>Your new registration has been added to <a href="#0">registered lets</a> on your account, you can return to this service any time to view and manage your registration.</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <p>
+        <a href="#0">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

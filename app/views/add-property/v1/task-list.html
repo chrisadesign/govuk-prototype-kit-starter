@@ -1,0 +1,66 @@
+{% extends "layouts/one-login.html" %}
+{% set back = false %}
+
+{% set title = '<span class="govuk-caption-l">Register property</span> '+ (data['address'] or 'Isle of Man Government Office of Human Resources Learning Education and Development, The Lodge Education and Training Centre, Braddan Road, Strang, Douglas, Isle Of Man, IM4 4QN') %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ title | safe }}
+      </h1>
+
+      {{ govukTaskList({
+        idPrefix: 'task-list',
+        items: [
+          {
+            title: {
+              html: 'Add address'
+            },
+            status: {
+              html: 'Completed'
+            }
+          },
+          {
+            title: {
+              html: 'Select type of accomadation'
+            },
+            href: '#0',
+            status: {
+              tag: {
+                html: 'Incomplete',
+                classes: 'govuk-tag--blue'
+              }
+            }
+          },
+          {
+            title: {
+              html: 'Add number of bedrooms and guests'
+            },
+            href: '#0',
+            status: {
+              tag: {
+                html: 'Incomplete',
+                classes: 'govuk-tag--blue'
+              }
+            }
+          },
+          {
+            title: {
+              html: 'Confirm the property meets standards'
+            },
+            href: '#0',
+            status: {
+              tag: {
+                html: 'Incomplete',
+                classes: 'govuk-tag--blue'
+              }
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

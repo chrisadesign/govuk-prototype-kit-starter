@@ -2,14 +2,13 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 router.get('*', function(req, res, next){
-  // Change the service name for this whole feature
-  res.locals['serviceName'] = 'Example'
+  res.locals['serviceName'] = ''
 
   next()
 })
 
-router.post('/question', function (req, res) {
-  res.redirect('next-page');
+router.post('/details', function (req, res) {
+  res.redirect('confirmation');
 })
 
 

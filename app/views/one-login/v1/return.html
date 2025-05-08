@@ -1,0 +1,35 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Returning you to [service]
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-l">
+    Returning you to your service
+  </h1>
+
+  <div class="hods-loading-spinner">
+    <div
+      class="hods-loading-spinner__spinner"
+      aria-live="polite"
+      role="status"
+      style="float:left"
+    ></div>
+    <div class="hods-loading-spinner__content govuk-!-text-align-left" style="clear: both">
+      <p>Please wait</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {{ govukButton({
+    id: 'hiddenButton',
+    href: data['onelogin-return'],
+    classes: 'govuk-visually-hidden'
+  }) }}
+  <script type="text/javascript">
+    //wait three seconds before continuing.
+    setTimeout(function(){document.getElementById("hiddenButton").click();}, 3000)
+  </script>
+{% endblock %}

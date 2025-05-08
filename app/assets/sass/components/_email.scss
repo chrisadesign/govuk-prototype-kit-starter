@@ -1,0 +1,74 @@
+.app-email,
+.app-email__body {
+	background-color: govuk-colour("light-grey")
+}
+
+.email-message,
+.email-message-meta {
+	background-color: govuk-colour("white")
+}
+
+.email-message {
+	margin-bottom: 30px;
+	border: 1px solid $govuk-border-colour;
+}
+
+.email-message-meta {
+	@include govuk-font($size: 19);
+	margin: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	td, th {
+		@include govuk-font($size: 19);
+		border-top: 0;
+		border-bottom: 1px solid $govuk-border-colour;
+		vertical-align: top;
+		text-align: left;
+		padding: 12px 20px 9px 0;
+	}
+
+	th {
+		color:  govuk-colour("dark-grey");
+		padding-left: 60px;
+	}
+
+	td {
+		width: 99%;
+		padding-right: 60px;
+		word-break: break-word;
+
+		&:last-child {
+			padding-right: 60px;
+		}
+	}
+}
+
+.email-message-from {
+	padding-top: 15px;
+}
+
+.email-message-body {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px 60px 0 60px;
+	margin: 0;
+	clear: both;
+	position: relative;
+	word-wrap: break-word;
+
+	table {
+		margin: 0 0 20px 0;
+	}
+
+	table td {
+		border: 0;
+		padding: 0;
+		font-family: inherit !important;
+	}
+
+	table li:first-child {
+		margin-top: 0 !important;
+	}
+}
+

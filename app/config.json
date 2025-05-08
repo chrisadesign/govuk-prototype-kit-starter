@@ -1,3 +1,8 @@
 {
-  "serviceName": "Prototype starter"
+  "serviceName": "Short Term Lets Beta",
+  "plugins": {
+    "govuk-frontend": {
+    "rebrand": false
+    }
+  }
 }

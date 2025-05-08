@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Enter payment details
+      </h1>
+
+      <div style="background: #f3f2f1; border-top: 4px solid #1d70b8; padding: 15px; margin-bottom: 30px;">
+        <h2 class="govuk-heading-m">
+          Payment summary
+        </h2>
+        <p>Register one property</p>
+        <p class="govuk-!-margin-bottom-0">Total amount: <br><span class="govuk-!-font-size-36 govuk-!-font-weight-bold">£50.00</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: 'Enter card details',
+            classes: 'govuk-fieldset__legend--m govuk-!-margin-top-6 govuk-!-margin-bottom-1'
+          }
+        }) %}
+
+          {{ govukInput({
+            id: 'card-number',
+            formGroup: {
+              classes: 'govuk-!-margin-bottom-1'
+            },
+            label: {
+              html: 'Card number',
+              classes: 'govuk-label--s'
+            }
+          }) }}
+          <img src="/public/images/accepted-cards.png" width="380" style="padding-top:5px;">
+          <p class="govuk-hint govuk-!-margin-bottom-6">
+            Accepted credit and  debit card types
+          </p>
+
+          {{ govukDateInput({
+            id: 'expiry-date',
+            namePrefix: 'expiry-date',
+            fieldset: {
+              legend: {
+                text: 'Expiry date',
+                isPageHeading: true or false,
+                classes: 'govuk-fieldset__legend--s'
+              }
+            },
+            hint: {
+              text: 'For example, 10/26'
+            },
+            items: [
+              {
+                classes: 'govuk-input--width-3'
+              },
+              {
+                classes: 'govuk-input--width-3'
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            id: 'card-name',
+            label: {
+              html: 'Name on card',
+              classes: 'govuk-label--s'
+            }
+          }) }}
+
+          {{ govukInput({
+            id: 'card-security',
+            classes: 'govuk-input--width-3',
+            label: {
+              html: 'Card security code',
+              classes: 'govuk-label--s'
+            },
+            hint: {
+              text: 'The last 3 digits on the back of the card'
+            }
+          }) }}
+
+        {% endcall %}
+
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+        {% call govukFieldset({
+          legend: {
+            text: 'Billing address',
+            classes: 'govuk-fieldset__legend--m govuk-!-margin-top-6 govuk-!-margin-bottom-1'
+          }
+        }) %}
+
+          <p class="govuk-hint">This is the address associated with the card</p>
+
+          {{ govukInput({
+            label: {
+              html: 'Address line 1',
+              classes: 'govuk-label--s'
+            },
+            id: 'address-line-1',
+            autocomplete: 'address-line1'
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: 'Address line 2 (optional)',
+              classes: 'govuk-label--s'
+            },
+            id: 'address-line-2',
+            autocomplete: 'address-line2'
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Town or city',
+              classes: 'govuk-label--s'
+            },
+            classes: 'govuk-!-width-two-thirds',
+            id: 'address-town',
+            autocomplete: 'address-level2'
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Country or territory',
+              classes: 'govuk-label--s'
+            },
+            classes: 'govuk-!-width-two-thirds',
+            id: 'address-county'
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Postcode',
+              classes: 'govuk-label--s'
+            },
+            classes: 'govuk-input--width-10',
+            id: 'address-postcode',
+            autocomplete: 'postal-code'
+          }) }}
+
+        {% endcall %}
+
+
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+        {% call govukFieldset({
+          legend: {
+            text: 'Contact details',
+            classes: 'govuk-fieldset__legend--m govuk-!-margin-top-6 govuk-!-margin-bottom-1'
+          }
+        }) %}
+
+          <p class="govuk-hint">We&rsquo;ll send your payment confirmation here</p>
+
+          {{ govukInput({
+            id: 'card-email',
+            type: 'email',
+            autocomplete: 'email',
+            spellcheck: false,
+            classes: 'govuk-!-width-three-quarters',
+            label: {
+              text: 'Email'
+            }
+          }) }}
+
+        {% endcall %}
+
+
+        {{ govukButton({
+          html: 'Continue'
+        }) }}
+
+        <p><a href="#0">Cancel payment</a></p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

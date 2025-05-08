@@ -1,5 +1,4 @@
 {% extends "layouts/main.html" %}
-
 {% set back = false %}
 
 {% block content %}
@@ -7,47 +6,21 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        {{ serviceName }}
+        Prototypes
       </h1>
 
-      <p class="govuk-!-margin-bottom-2">This starter has added:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          a <a href="versioning-documentation">feature and versioning system</a>
+          <a class="govuk-link--no-visited-state" href="account-creation/">Account creation</a>
         </li>
         <li>
-          a new "questions" block within content one to reduce code in form pages
-        </li>
-        <li>
-          an internal layout which uses a custom header component (<a href="internal-example">example internal page</a>)
-        </li>
-        <li>
-          the <a href="https://github.com/alphagov/accessible-autocomplete">accessible autocomplete component</a> integrated, you can upgrade any select by adding the <code>'js-autocomplete'</code> class (<a href="autocomplete-example">example autocomplete page</a>)
-        </li>
-        <li>
-          the "secret" <code>'settings.scss'</code> file, with most options listed with their default values, should hopefully make rebranding easier
-        </li>
-        <li>
-          an inverse button to use on dark backgrounds, <code>'govuk-button--inverse'</code>
-        </li>
-        <li>
-          a link in the footer to the current page on your hosted prototype
-        </li>
-        <li>
-          a link in the footer to the git repository
+          <a class="govuk-link--no-visited-state" href="add-property/">Add a property/let</a>
         </li>
       </ul>
 
-      <p><strong>Note: </strong>The department name for internal header as well as both the hosted prototype and the repo URLs are set in <code>session-data-defaults.js</code>.</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
 
-
-      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
-
-
-      <p>{{ serviceName }} is a community resource of the <a href="http://prototype-kit.service.gov.uk/">GOV.UK Prototype Kit</a>. The Prototype Kit team is not responsible for it and cannot support you with using it.</p>
-
-      <p>If you&rsquo;ve got a question, need support, or want to contribute you can <a href="https://github.com/chrisadesign/govuk-prototype-kit/issues">create an issue on GitHub</a>.</p>
-
+      <p>There are also short flows for <a class="govuk-link--no-visited-state" href="govuk-pay/">GOV.UK Pay</a> and <a class="govuk-link--no-visited-state" href="one-login/">One Login</a> which can be integrated into other prototype flows.</p>
 
     </div>
   </div>

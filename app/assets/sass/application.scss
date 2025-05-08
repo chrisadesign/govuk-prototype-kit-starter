@@ -5,11 +5,29 @@
 
 @import "components/autocomplete";
 @import "components/buttons";
-@import "components/header";
+@import "components/email";
 
+// Highlight code
 code {
 	@include govuk-font($size: 19);
 	color: #d13118;
 	background-color: govuk-colour("light-grey");
-	padding: 0 govuk-spacing(1);
+}
+
+// Add a highlight for placeholder content
+.placeholder {
+	display: inline;
+	background-color: lighten(	#fdd522, 25%);
+	color: #0b0c0c;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	border-radius: 6px;
+	box-shadow: inset 0.47em 0 0 0 #fff, inset -0.47em 0 0 0 #fff, inset 0 0.16em 0 0 #fff;
+
+	&:before {
+		content: "(("
+	}
+	&:after {
+		content: "))"
+	}
 }

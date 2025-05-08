@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+{% set back = false %}
+
+{% set title = 'Create an account' %}
+
+{% block questions %}
+  <h1 class="govuk-heading-l">
+    {{ title }}
+  </h1>
+
+  <p>You&rsquo;ll need an account to use this service, it will allow you to register and manage shot term let properties.</p>
+
+  {{ govukRadios({
+    idPrefix: 'account-type',
+    name: 'account-type',
+    fieldset: {
+      legend: {
+        html: 'What type of account do you want to create?',
+        classes: 'govuk-fieldset__legend--m',
+        isPageHeading: false
+      }
+    },
+    hint: {
+      html: ''
+    },
+    items: [
+      {
+        html: 'Individual',
+        value: 'Individual',
+        checked: checked('account-type','Individual')
+      },
+      {
+        html: 'Agent',
+        value: 'Agent',
+        checked: checked('account-type','Agent')
+      }
+    ]
+  }) }}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layouts/main.html" %}
+
+{% set title = 'Your full name' %}
+
+{% block questions %}
+  {{ govukInput({
+    id: 'name',
+    name: 'name',
+    value: data['name'],
+    label: {
+      html: title,
+      classes: 'govuk-label--l',
+      isPageHeading: true
+    },
+    autocomplete: "name",
+    spellcheck: false
+  }) }}
+{% endblock %}

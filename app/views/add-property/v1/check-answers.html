@@ -1,0 +1,102 @@
+{% extends "layouts/one-login.html" %}
+
+{% set title = 'Check your answers before registering your property' %}
+
+{% block questions %}
+  <h1 class="govuk-heading-l">
+    {{ title }}
+  </h1>
+
+  {{ govukSummaryList({
+    classes: "govuk-!-margin-bottom-9",
+    rows: [
+      {
+        key: {
+          html: 'Address'
+        },
+        value: {
+          html: data['address'] or ('Property address' | placeholder)
+        },
+        actions: {
+          items: [
+            {
+              href: '../address--select?change',
+              text: 'Change'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          html: 'Accomodation type'
+        },
+        value: {
+          html: data['accomodation-type'] or ('Type' | placeholder)
+        },
+        actions: {
+          items: [
+            {
+              href: 'accomodation-type?change',
+              text: 'Change'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          html: 'Bedrooms'
+        },
+        value: {
+          html: data['bedrooms'] or ('Number of rooms' | placeholder)
+        },
+        actions: {
+          items: [
+            {
+              href: 'bedrooms?change',
+              text: 'Change'
+            }
+          ]
+        }
+      } if data['accomodation-type'] != 'Single room',
+      {
+        key: {
+          html: 'Guests'
+        },
+        value: {
+          html: data['guests'] or ('Number of guests' | placeholder)
+        },
+        actions: {
+          items: [
+            {
+              href: 'guests?change',
+              text: 'Change'
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+
+
+
+  <h2 class="govuk-heading-m">
+    Register the property
+  </h2>
+
+  <p class="govuk-!-margin-bottom-2">Before registering the property you must pay the registration fee and confirming that, where required for the type of property, it meets:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>gas safety standards</li>
+    <li>fire safety standards</li>
+    <li>furniture fire safety standards</li>
+    <li>electrical safety standards</li>
+  </ul>
+
+{% endblock %}
+
+{% block buttons %}
+  {{ govukButton({
+    html: 'Agree and pay registration fee',
+    href: '/govuk-pay/v1/details?govukpay-return=/add-property/v1/confirmation'
+  }) }}
+{% endblock %}
