@@ -9,7 +9,7 @@ router.get('*', function(req, res, next){
 })
 
 router.post('/question', function (req, res) {
-  res.redirect('next-page');
+  res.redirect('../');
 })
 
 

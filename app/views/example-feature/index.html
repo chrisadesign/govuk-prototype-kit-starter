@@ -1,5 +1,12 @@
 {% extends "layouts/main.html" %}
 
+{% block backLink %}
+  {{ govukBackLink({
+    html: 'Go back to the list of all prototypes',
+    href: '/'
+  }) }}
+{% endblock %}
+
 {% set title = 'Example feature' %}
 
 {% block content %}

@@ -11,11 +11,12 @@ const config = require('govuk-prototype-kit/lib/config').getConfig()
 
 
 router.use('/', (req, res, next) => {
-	// Add a local var if the prototype is running locally
+	// If the prototype is running locally…
 	if (req.get('host').includes('localhost')) {
+		// Add a local variable, used to toggle hosted page link in footer
 		res.locals.local = true
 
-		// Grab the current URL for the remote prototype link
+		// Add a current URL variable, used for the hosted page link in footer
 		res.locals.currentURL = req.url
 	}
 

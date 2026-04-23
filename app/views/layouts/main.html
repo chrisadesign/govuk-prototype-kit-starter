@@ -8,7 +8,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {# Add the title(h1) to page title if it's set, add to each page with:
 {% set title = 'Example' %} #}
 {% block pageTitle %}
-	{{ title+' –' if title }} {{ serviceName }} – GOV.UK
+	{{ (title+' –' if title) | striptags | safe }} {{ (serviceName+' –' if serviceName) | striptags | safe}} GOV.UK
 {% endblock %}
 
 
@@ -37,9 +37,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 		<div class="govuk-grid-column-three-quarters govuk-grid-column-two-thirds-from-desktop">
 
 			{# Forms all post to themselves, action controlled by _routes.js in each prototype #}
-			<form method="post">
+			<form method="post" novalidate>
 
-				{# Use the questions block on each page without needing to add in the rest of this block #}
+				{# Use the questions block on each page without needing to add in the rest of form structure #}
 				{% block questions %}{% endblock %}
 
 				{# Set default button to continue, use buttons block to override #}
