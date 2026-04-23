@@ -1,6 +1,6 @@
 # GOV.UK Prototype Kit Starter
 
-> Upgraded to v13 of the prototype kit!
+> Last updated 23 April 2026, updated to v13.20.0 of the prototype kit and removed some outdated features
 
 ## About
 
